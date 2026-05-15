@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{88b6f87c-fca5-4c8b-84a7-24c3d0d3e89d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{6cf9dc9f-fce2-408c-86fa-ce6bf1f969e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{86ba0b22-3064-4829-9dbf-a35ad7dfb249}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\GameObject">
+      <UniqueIdentifier>{cf32dc35-022f-4522-a950-bc166387d9b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Scene">
+      <UniqueIdentifier>{532a11d3-e749-4da7-a56b-6a92c5320809}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Component">
+      <UniqueIdentifier>{50209387-af25-4d9b-a457-632f240f405e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Scene\Base">
+      <UniqueIdentifier>{c05cf045-d756-4080-af6b-43317ac3fb35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Scene\Manager">
+      <UniqueIdentifier>{ca4f28f7-6b7c-43af-a60f-3b7586124cd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Scene\Scenes">
+      <UniqueIdentifier>{f2fd1738-6f44-4f63-801b-93eff9279cb1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Framework\Scene\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Framework\Scene\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="TectScene.cpp">
+      <Filter>Framework\Scene\Scenes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Scene.h">
+      <Filter>Framework\Scene\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Framework\Scene\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="TectScene.h">
+      <Filter>Framework\Scene\Scenes</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
