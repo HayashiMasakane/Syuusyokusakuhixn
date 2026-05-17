@@ -4,9 +4,13 @@
 /// <summary>
 ///	シーンがちゃんと動くかオブジェクトが動くかを調べるための派生シーン
 /// </summary>
-class TectScene :public Scene
+class TestScene :public Scene
 {
 public:
+	TestScene() = default;
+	~TestScene()override {};
+
+
 	void Init()override;
 	void Uninit()override;
 	void Update() override;

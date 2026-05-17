@@ -7,7 +7,7 @@ class Scene;
 
 /// <summary>
 /// sceneの生成管理をするシングルトン
-/// m_scenesでシーンををインスタンス化。
+/// m_scenesでシーンををインスタンス化
 /// </summary>
 class SceneManager
 {
@@ -25,7 +25,7 @@ private:
 	SceneManager() = default;
 	~SceneManager();
 	SceneManager(SceneManager&) = delete;
-	SceneManager operator=(SceneManager&) = delete;;
+	SceneManager operator=(SceneManager&) = delete;
 
 public:
 	//	参照インスタンスを返す

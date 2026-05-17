@@ -1,15 +1,14 @@
 
 #include"SceneManager.h"
-#include"TectScene.h"
+#include"TestScene.h"
 //	エントリーポイント
 int main()
 {
 
 
 	SceneManager::GetInstance().Init();
-	SceneManager::GetInstance().AddScene<TectScene>("test");
 
-	SceneManager::GetInstance().ChangeMainScene("rrr");
+	SceneManager::GetInstance().AddScene<TestScene>("test");
 	SceneManager::GetInstance().ChangeMainScene("test");
 
 
