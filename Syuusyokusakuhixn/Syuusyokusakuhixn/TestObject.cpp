@@ -1,10 +1,11 @@
 #include "TestObject.h"
 #include"ComponentManager.h"
 #include"TestComponent.h"
-TestObject::TestObject(const GameObjectId m_gameObjectId) :GameObject(m_gameObjectId)
+
+
+TestObject::TestObject( GameObjectId _gameObjectId, ComponentManager& _componentManager) : GameObject(_gameObjectId, _componentManager)
 {
 }
-
 
 
 void TestObject::Init()

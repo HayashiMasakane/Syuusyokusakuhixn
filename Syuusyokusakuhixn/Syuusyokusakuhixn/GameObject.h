@@ -11,10 +11,10 @@ class GameObject
 {
 private:
 	const GameObjectId m_gameObjectId;
-	const ComponentManager m_componentManager;
+	ComponentManager& m_componentManager;
 
 public:
-	GameObject(const GameObjectId& m_gameObjectId);	//	固有の名前を入れる
+	GameObject(GameObjectId& _gameObjectId, ComponentManager& _componentManager);	//	固有の名前を入れる
 	virtual ~GameObject();
 
 	virtual void Init() = 0;
@@ -22,9 +22,7 @@ public:
 	virtual void Update() = 0;
 	//	描画はシステムでする
 
-	const GameObjectId& GetGameObjectId();
 
-	
 	template<typename T>
 	T* AddComponent();
 
@@ -35,5 +33,5 @@ public:
 template<typename T>
 T* GameObject::AddComponent()
 {
-	return m_componentManager::AddComponent<T>(m_gameObjectId);
+		return m_componentManager.AddComponent<T>(m_gameObjectId);
 }

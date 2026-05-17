@@ -5,9 +5,9 @@
 #include<unordered_map>
 #include<Windows.h>
 #include"GameObjectId.h"
-#include"GameObject.h"
-class GameObject;
 
+class ComponentManager;
+class GameObject;
 /// <summary>
 /// ゲームオブジェクトを管理するコピー禁止クラス
 /// 派生シーンの中で使用
@@ -15,8 +15,7 @@ class GameObject;
 class GameObjectManager
 {
 private:
-	//	フレンド宣言
-	friend GameObject;
+
 
 	std::vector<std::unique_ptr<GameObject>> m_gameObjects;
 	std::vector<GameObjectId> m_releasedGameObjectNum;
@@ -38,7 +37,7 @@ public:
 	void Update();
 
 	template<typename T>
-	GameObject* AddGameObject(std::string _name);
+	GameObject* AddGameObject(std::string _name,  ComponentManager& _componentManager);
 	const GameObject* GetGameObject(std::string _name);
 	void DeleteGameObject(std::string _name);
 
@@ -47,7 +46,6 @@ public:
 
 
 #include"GameObject.h"
-
 /// <summary>
 /// ゲームオブジェクトを作成する
 /// 引数のstringと生成したオブジェクトを紐づけることでGetObjectでも取得可能
@@ -56,7 +54,7 @@ public:
 /// <param name="_name">作成するオブジェクトにつける名前</param>
 /// <returns>Gameobujectのconstポインタ</returns>
 template<typename T>
-GameObject* GameObjectManager::AddGameObject(std::string _name)
+GameObject* GameObjectManager::AddGameObject(std::string _name,  ComponentManager& _componentManager)
 {
 	//	すでに同じ名前があるならはじく
 	if (m_gameObjectDictionary.contains(_name)) 
@@ -80,7 +78,7 @@ GameObject* GameObjectManager::AddGameObject(std::string _name)
 		m_gameObjects.push_back(nullptr); // スロット確保
 	}
 
-	m_gameObjects[objectId] = std::make_unique<T>(objectId);
+	m_gameObjects[objectId] = std::make_unique<T>(objectId, _componentManager);
 
 
 	//	オブジェクト検索用Mapに登録

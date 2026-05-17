@@ -7,10 +7,9 @@
 /// 任意ののオブジェクト名に変更
 /// </summary>
 /// <param name="_gameObjectId">オブジェクト番号を入れる</param>
-GameObject::GameObject(const GameObjectId& _gameGameObjectId) :m_gameObjectId(m_gameObjectId)
+/// <param name="_componentManager">Scnen内のプライベート変数::コンポネントマネージャを入れる</param>
+GameObject::GameObject( GameObjectId& _gameObjectId,  ComponentManager& _componentManager) :m_gameObjectId(_gameObjectId), m_componentManager(_componentManager)
 {
-	std::cout << "GameObject作成:" << m_gameObjectId << std::endl;
-
 }
 
 /// <summary>
@@ -20,17 +19,3 @@ GameObject::~GameObject()
 {
 	std::cout << "GameObject削除:" << m_gameObjectId << std::endl;
 }
-
-/// <summary>
-/// オブジェクト名を返す
-/// </summary>
-/// <returns>オブジェクト名を返すconst参照</returns>
-const GameObjectId& GameObject::GetGameObjectId()
-{
-	return m_gameObjectId;
-
-
-}
-
-
-

@@ -8,6 +8,9 @@
 class Scene
 {
 private:
+	//	ƒtƒŒƒ“ƒhéŒ¾
+	friend GameObjectManager;
+
 	GameObjectManager m_gameObjectManager;
 	ComponentManager m_componentManager;
 
@@ -20,10 +23,17 @@ public:
 	virtual void Update() = 0;
 	virtual void Draw() = 0;
 
-	GameObjectManager& GetGameObjectManager();
-	ComponentManager& GetComponentManager();
 
 
+	template<typename T>
+	GameObject* AddGameObject(std::string _name);
 
 };
 
+
+template<typename T>
+GameObject* Scene::AddGameObject(std::string _name)
+{
+	m_gameObjectManager.AddGameObject<T>(_name,m_componentManager);
+	return nullptr;
+}

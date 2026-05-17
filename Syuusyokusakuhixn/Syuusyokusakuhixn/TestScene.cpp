@@ -5,7 +5,7 @@
 
 void TestScene::Init()
 {
-	GameObject* test = GetGameObjectManager().AddGameObject<TestObject>("testObject");
+	GameObject* test = AddGameObject<TestObject>("testObject");
 }
 
 void TestScene::Uninit()
