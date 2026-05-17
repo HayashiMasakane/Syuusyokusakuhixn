@@ -2,7 +2,7 @@
 #include<string>
 #include"GameObjectId.h"
 
-
+class ComponentManager;
 /// <summary>
 /// ゲームオブジェクトの基底クラス
 /// ゲームオブジェクトマネージャでインスタンス化
@@ -11,7 +11,7 @@ class GameObject
 {
 private:
 	const GameObjectId m_gameObjectId;
-
+	const ComponentManager m_componentManager;
 
 public:
 	GameObject(const GameObjectId& m_gameObjectId);	//	固有の名前を入れる
@@ -35,5 +35,5 @@ public:
 template<typename T>
 T* GameObject::AddComponent()
 {
-	return ComponentManager::AddComponent<T>(m_gameObjectId);
+	return m_componentManager::AddComponent<T>(m_gameObjectId);
 }

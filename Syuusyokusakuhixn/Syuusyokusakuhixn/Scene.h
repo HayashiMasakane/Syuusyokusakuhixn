@@ -1,5 +1,6 @@
 #pragma once
 #include"GameObjectManager.h"
+#include"ComponentManager.h"
 /// <summary>
 ///	sceneの基底クラス
 /// sceneマネージャでインスタンスを作る
@@ -8,7 +9,7 @@ class Scene
 {
 private:
 	GameObjectManager m_gameObjectManager;
-
+	ComponentManager m_componentManager;
 
 public:
 	Scene() = default;
@@ -20,6 +21,7 @@ public:
 	virtual void Draw() = 0;
 
 	GameObjectManager& GetGameObjectManager();
+	ComponentManager& GetComponentManager();
 
 
 

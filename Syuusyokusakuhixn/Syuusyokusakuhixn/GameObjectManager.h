@@ -5,7 +5,7 @@
 #include<unordered_map>
 #include<Windows.h>
 #include"GameObjectId.h"
-
+#include"GameObject.h"
 class GameObject;
 
 /// <summary>
@@ -15,6 +15,9 @@ class GameObject;
 class GameObjectManager
 {
 private:
+	//	ƒtƒŒƒ“ƒhéŒ¾
+	friend GameObject;
+
 	std::vector<std::unique_ptr<GameObject>> m_gameObjects;
 	std::vector<GameObjectId> m_releasedGameObjectNum;
 	
