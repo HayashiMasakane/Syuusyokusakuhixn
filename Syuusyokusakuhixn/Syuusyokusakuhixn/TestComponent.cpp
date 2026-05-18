@@ -3,15 +3,19 @@
 
 TestComponent::TestComponent(const GameObjectId _gameObjectId) :Component(_gameObjectId)
 {
-	std::cout << "ì¬FTectComponent" << std::endl;
+	Init();
+}
 
+TestComponent::~TestComponent()
+{
+	Uninit();
 }
 
 void TestComponent::Init()
 {
-	std::cout << "ì¬FTectComponent" << std::endl;
 }
 
 void TestComponent::Uninit()
 {
+
 }

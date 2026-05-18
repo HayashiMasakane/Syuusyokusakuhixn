@@ -1,6 +1,7 @@
 #include "SceneManager.h"
-#include"Scene.h"
 #include<Windows.h>
+#include<iostream>
+#include"Scene.h"
 
 
 /// <summary>
@@ -8,6 +9,10 @@
 /// </summary>
 SceneManager::~SceneManager()
 {
+	std::cout << "------------------------------------------------" << std::endl;
+	std::cout << "~SceneManager()" << std::endl;
+	std::cout << "------------------------------------------------" << std::endl;
+
 	Uninit();
 }
 
@@ -37,7 +42,13 @@ void SceneManager::Uninit()
 	//	scenes全てのUnint()を回し解放する
 	for (auto& scene : m_scenes)
 	{
+		//	削除するシーンの名前を表示
+		const std::string& sceneName = scene.first;
+		std::cout << "Uninit():" << sceneName << std::endl;
+
 		scene.second->Uninit();
+
+		std::cout << std::endl;
 	}
 	m_scenes.clear();
 	m_mainScene = nullptr;
@@ -53,7 +64,7 @@ void SceneManager::Update()
 	{
 		if (m_mainScene)
 		{
-			m_mainScene->Uninit();
+			DeleteMainScene();
 		}
 
 		m_mainScene = m_scenes[m_nextMainSceneName].get();
@@ -81,7 +92,7 @@ void SceneManager::Draw()
 /// <param name="_name"></param>
 void SceneManager::ChangeMainScene(const std::string _name)
 {
-
+	std::cout << "ChangeMainScene:" << _name << std::endl;
 	if (!m_scenes.contains(_name))
 	{
 		MessageBoxA(NULL, "ChangeMainSceneの引数のシーンがありません", "えらー", MB_ICONWARNING | MB_OK);
@@ -90,6 +101,15 @@ void SceneManager::ChangeMainScene(const std::string _name)
 
 	m_nextMainSceneName = _name;
 
+}
+
+/// <summary>
+/// m_mainSceneの削除処理
+/// </summary>
+void SceneManager::DeleteMainScene()
+{
+	std::cout << "DeleteScene:m_mainScene" << std::endl;
+	m_mainScene->Uninit();
 }
 
 

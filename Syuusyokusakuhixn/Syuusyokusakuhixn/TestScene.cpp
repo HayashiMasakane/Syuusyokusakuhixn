@@ -1,5 +1,10 @@
 #include "TestScene.h"
+#include<iostream>
 #include"TestObject.h"
+
+TestScene::TestScene(std::string _sceneName) :Scene(_sceneName)
+{
+}
 
 
 

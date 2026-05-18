@@ -1,4 +1,5 @@
 #pragma once
+#include<string>
 #include"GameObjectManager.h"
 #include"ComponentManager.h"
 /// <summary>
@@ -8,12 +9,13 @@
 class Scene
 {
 private:
+	const std::string m_sceneName;
 	GameObjectManager m_gameObjectManager;
 	ComponentManager m_componentManager;
 
 public:
-	Scene() = default;
-	virtual	~Scene() {};
+	Scene(const std::string& _sceneName);
+	virtual	~Scene();
 
 	virtual void Init() = 0;
 	virtual void Uninit() = 0;

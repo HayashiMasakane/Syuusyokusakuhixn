@@ -9,7 +9,7 @@ private:
 	const GameObjectId m_gameObjectId;
 
 public:
-	Component(const GameObjectId _gameObjectId);
+	Component(const GameObjectId& _gameObjectId);
 	virtual ~Component() = default;
 
 	virtual void Init() = 0;

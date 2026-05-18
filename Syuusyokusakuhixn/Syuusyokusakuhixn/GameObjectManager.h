@@ -19,7 +19,7 @@ class GameObjectManager
 private:
 
 	std::vector<std::unique_ptr<GameObject>> m_gameObjects;
-	std::vector<GameObjectId> m_releasedGameObjectNum;
+	std::vector<GameObjectId> m_releasedGameObjectNum;		//	使用し終わったオブジェクトid。再利用するため保存
 	
 	//	オブジェクト検索用
 	std::unordered_map < std::string, GameObject* > m_gameObjectDictionary;
@@ -38,14 +38,15 @@ public:
 	void Update();
 
 	template<typename T>
-	GameObject* AddGameObject(std::string _name,  ComponentManager& _componentManager);
-	const GameObject* GetGameObject(std::string _name);
-	void DeleteGameObject(std::string _name);
+	GameObject* AddGameObject(const std::string _name, ComponentManager& _componentManager);
+	const GameObject* GetGameObject(const std::string _name);
+	void DeleteGameObject(const std::string _name);
 
 
 };
 
 
+#include<iostream>
 #include"GameObject.h"
 /// <summary>
 /// ゲームオブジェクトを作成する
@@ -55,7 +56,7 @@ public:
 /// <param name="_name">作成するオブジェクトにつける名前</param>
 /// <returns>Gameobujectのconstポインタ</returns>
 template<typename T>
-GameObject* GameObjectManager::AddGameObject(std::string _name,  ComponentManager& _componentManager)
+GameObject* GameObjectManager::AddGameObject(const std::string _name, ComponentManager& _componentManager)
 {
 	//	すでに同じ名前があるならはじく
 	if (m_gameObjectDictionary.contains(_name)) 
@@ -79,8 +80,9 @@ GameObject* GameObjectManager::AddGameObject(std::string _name,  ComponentManage
 		m_gameObjects.push_back(nullptr); // スロット確保
 	}
 
+	std::cout << "AddGameObject:" << _name << std::endl;
 	m_gameObjects[objectId] = std::make_unique<T>(objectId, _componentManager);
-
+	m_gameObjects[objectId]->Init();
 
 	//	オブジェクト検索用Mapに登録
 	m_gameObjectDictionary[_name] = m_gameObjects[objectId].get();

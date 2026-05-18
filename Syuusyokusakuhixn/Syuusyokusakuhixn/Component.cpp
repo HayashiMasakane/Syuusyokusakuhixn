@@ -4,9 +4,8 @@
 /// 生成時にこのコンポーネントを持っているオブジェクトのIdを格納
 /// </summary>
 /// <param name="_gameObjectId">これを持っているオブジェクトid</param>
-Component::Component(const GameObjectId _gameObjectId) :m_gameObjectId(_gameObjectId)
+Component::Component(const GameObjectId& _gameObjectId) :m_gameObjectId(_gameObjectId)
 {
-	std::cout << "Componentの作成:オブジェクトId" << m_gameObjectId << std::endl;
 }
 
 

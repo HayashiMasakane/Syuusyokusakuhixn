@@ -9,7 +9,7 @@ class TestComponent :public Component
 {
 public:
 	TestComponent(const GameObjectId _gameObjectId);
-	 ~TestComponent() = default;
+	~TestComponent();
 
 	 void Init() override;
 	 void Uninit() override;

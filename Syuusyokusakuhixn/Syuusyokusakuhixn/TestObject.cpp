@@ -1,5 +1,5 @@
 #include "TestObject.h"
-#include"ComponentManager.h"
+#include<iostream>
 #include"TestComponent.h"
 
 
@@ -15,6 +15,7 @@ void TestObject::Init()
 
 void TestObject::Uninit()
 {
+	std::cout << "TestObject‚ðíœ" << std::endl;
 }
 
 void TestObject::Update()

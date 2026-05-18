@@ -14,7 +14,7 @@ private:
 	ComponentManager& m_componentManager;
 
 public:
-	GameObject(GameObjectId& _gameObjectId, ComponentManager& _componentManager);	//	固有の名前を入れる
+	GameObject(const GameObjectId& _gameObjectId, ComponentManager& _componentManager);	//	固有の名前を入れる
 	virtual ~GameObject();
 
 	virtual void Init() = 0;

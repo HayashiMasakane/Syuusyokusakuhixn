@@ -27,6 +27,8 @@ private:
 	SceneManager(SceneManager&) = delete;
 	SceneManager operator=(SceneManager&) = delete;
 
+	void ChangeScene();
+
 public:
 	//	参照インスタンスを返す
 	static  SceneManager& GetInstance();
@@ -40,12 +42,12 @@ public:
 	void AddScene(const std::string _name);
 	//	現在のsceneを引数のsceneに変更予約をする
 	void ChangeMainScene(const std::string _name);
-
+	void DeleteMainScene();
 
 
 };
 
-
+#include<iostream>
 /// <summary>
 /// シーンクラスをマネージャーに追加
 /// </summary>
@@ -61,7 +63,8 @@ inline void SceneManager::AddScene(const std::string _name)
 		return;
 	}
 
-	m_scenes[_name] = std::make_unique<T>();
+	m_scenes[_name] = std::make_unique<T>(_name);
+	std::cout << "AddScene:" << _name << std::endl;
 
 	//	mainSceneがないなら入れる
 	if (m_mainScene == nullptr)

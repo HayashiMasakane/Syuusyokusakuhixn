@@ -29,59 +29,91 @@ private:
 
 	// 型ごとに vector<T> を取得（なければ作る）
 	template<typename T>
-	std::vector<T>& GetMap()
-	{
-		auto key = std::type_index(typeid(T));
+	std::vector<T>& GetMap();
 
-		// まだ配列がないなら作る
-		if (m_componentMap.find(key) == m_componentMap.end())
-		{
-			m_componentMap[key] = new std::vector<T>();
-		}
-
-		return *static_cast<std::vector<T>*>(m_componentMap[key]);
-	}
-
-	/// <summary>
-	/// コンポーネントを追加（同じコンポーネントも付けれるぞ）
-	/// ゲームオブジェクトクラス内で登録する
-	/// </summary>
-	/// <typeparam name="T"></typeparam>
-	/// <param name="_objectId"></param>
-	/// <returns></returns>
+	//	Componentを作成
 	template<typename T>
-	T* AddComponent(GameObjectId _objectId)
-	{
-		auto& arr = GetMap<T>();
-
-		arr.push_back(T(_objectId));
-		T* comp = &arr.back();
-
-		return comp;
-	}
-
+	T* AddComponent(const GameObjectId& _objectId);
 
 public:
 	ComponentManager() = default;
 	~ComponentManager();
 
+	void Init();
+	void Uninit();
 
 
 
-	// Component の配列をシステムに渡す
+	//	オブジェクトのTコンポーネント群を取得
 	template<typename T>
-	std::vector<T*> GetComponents(GameObjectId owner)
-	{
-		std::vector<T*> result;
+	std::vector<T*> GetComponents(const GameObjectId _objectId);
 
-		auto& arr = GetMap<T>();
-		for (auto& c : arr)
-		{
-			if (c.owner == owner)
-				result.push_back(&c);
-		}
-
-		return result;
-	}
 
 };
+
+
+
+/// <summary>
+/// 各ComponentMapの取得or生成
+/// </summary>
+/// <typeparam name="T">取得したい配列</typeparam>
+/// <returns>配列</returns>
+template<typename T>
+std::vector<T>& ComponentManager::GetMap()
+{
+	auto key = std::type_index(typeid(T));
+
+	// まだ配列がないなら作る
+	if (m_componentMap.find(key) == m_componentMap.end())
+	{
+		m_componentMap[key] = new std::vector<T>();
+	}
+
+	return *static_cast<std::vector<T>*>(m_componentMap[key]);
+}
+
+
+
+#include<iostream>
+/// <summary>
+/// コンポーネントを追加（同じコンポーネントを複数個付けれるぞ）
+/// ゲームオブジェクトクラス内で登録する
+/// </summary>
+/// <typeparam name="T">Component派生クラス</typeparam>
+/// <param name="_objectId">つけたいオブジェクト</param>
+/// <returns>つけたComponentのポインタ</returns>
+template<typename T>
+T* ComponentManager::AddComponent(const GameObjectId& _objectId)
+{
+	auto& arr = GetMap<T>();
+
+	arr.push_back(T(_objectId));
+	T* comp = &arr.back();
+
+	std::cout << "AddComponent::GameObjectId:" << _objectId << std::endl;
+	return comp;
+}
+
+/// <summary>
+///	オブジェクトIdに対応したTのコンポーネントポインタをすべて取得
+/// </summary>
+/// <typeparam name="T">取得したいComponent</typeparam>
+/// <param name="_objectId">ゲームオブジェクトId</param>
+/// <returns>Tのvector配列</returns>
+template<typename T>
+std::vector<T*> ComponentManager::GetComponents(const GameObjectId _objectId)
+{
+	std::vector<T*> result;
+
+	//	T配列から_オブジェクトIdに対応した物を代入
+	auto& arr = GetMap<T>();
+	for (auto& component : arr)
+	{
+		if (component._objectId == _objectId)
+		{
+			result.push_back(component);
+		}
+	}
+
+	return result;
+}
