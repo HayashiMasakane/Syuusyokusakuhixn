@@ -14,72 +14,74 @@ class GameObject;
 class ComponentManager
 {
 private:
-    //  フレンド宣言
-    friend GameObject;
+	//  フレンド宣言
+	friend GameObject;  //  AddComponentを使用
 
 
-    // 型ごとに vector<T> を保持するための辞書
-    //  type_index  :Component派生クラス
-    //  void*       :vector<T>の先頭アドレスを入れる
-    std::unordered_map<std::type_index, void*> m_componentMap;
+	// 型ごとに vector<T> を保持するための辞書
+	//  type_index  :Component派生クラス
+	//  void*       :vector<T>の先頭アドレスを入れる
+	std::unordered_map<std::type_index, void*> m_componentMap;
 
 
+	ComponentManager(ComponentManager&) = delete;
+	ComponentManager operator=(ComponentManager&) = delete;
 
-    // 型ごとに vector<T> を取得（なければ作る）
-    template<typename T>
-    std::vector<T>& GetMap()
-    {
-        auto key = std::type_index(typeid(T));
+	// 型ごとに vector<T> を取得（なければ作る）
+	template<typename T>
+	std::vector<T>& GetMap()
+	{
+		auto key = std::type_index(typeid(T));
 
-        // まだ配列がないなら作る
-        if (m_componentMap.find(key) == m_componentMap.end())
-        {
-            m_componentMap[key] = new std::vector<T>();
-        }
+		// まだ配列がないなら作る
+		if (m_componentMap.find(key) == m_componentMap.end())
+		{
+			m_componentMap[key] = new std::vector<T>();
+		}
 
-        return *static_cast<std::vector<T>*>(m_componentMap[key]);
-    }
+		return *static_cast<std::vector<T>*>(m_componentMap[key]);
+	}
 
+	/// <summary>
+	/// コンポーネントを追加（同じコンポーネントも付けれるぞ）
+	/// ゲームオブジェクトクラス内で登録する
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	/// <param name="_objectId"></param>
+	/// <returns></returns>
+	template<typename T>
+	T* AddComponent(GameObjectId _objectId)
+	{
+		auto& arr = GetMap<T>();
 
+		arr.push_back(T(_objectId));
+		T* comp = &arr.back();
 
-    /// <summary>
-    /// コンポーネントを追加（同じコンポーネントも付けれるぞ）
-    /// ゲームオブジェクトクラス内で登録する
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <param name="_name"></param>
-    /// <returns></returns>
-    template<typename T>
-    T* AddComponent(GameObjectId _name)
-    {
-        auto& arr = GetMap<T>();
-
-        arr.push_back(T(_name));
-        T* comp = &arr.back();
-
-        return comp;
-    }
+		return comp;
+	}
 
 
 public:
+	ComponentManager() = default;
+	~ComponentManager();
 
 
 
 
-    // Component の配列をシステムに渡す
-    template<typename T>
-    std::vector<T*> GetComponents(GameObjectId owner)
-    {
-        std::vector<T*> result;
+	// Component の配列をシステムに渡す
+	template<typename T>
+	std::vector<T*> GetComponents(GameObjectId owner)
+	{
+		std::vector<T*> result;
 
-        auto& arr = GetMap<T>();
-        for (auto& c : arr)
-        {
-            if (c.owner == owner)
-                result.push_back(&c);
-        }
+		auto& arr = GetMap<T>();
+		for (auto& c : arr)
+		{
+			if (c.owner == owner)
+				result.push_back(&c);
+		}
 
-        return result;
-    }
+		return result;
+	}
 
 };

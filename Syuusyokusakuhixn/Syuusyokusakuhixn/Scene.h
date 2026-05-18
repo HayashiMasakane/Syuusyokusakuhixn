@@ -8,9 +8,6 @@
 class Scene
 {
 private:
-	//	ƒtƒŒƒ“ƒhéŒ¾
-	friend GameObjectManager;
-
 	GameObjectManager m_gameObjectManager;
 	ComponentManager m_componentManager;
 

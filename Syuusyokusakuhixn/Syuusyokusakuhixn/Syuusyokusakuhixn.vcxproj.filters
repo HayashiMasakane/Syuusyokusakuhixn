@@ -28,6 +28,24 @@
     <Filter Include="Framework\Scene\Scenes">
       <UniqueIdentifier>{f2fd1738-6f44-4f63-801b-93eff9279cb1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Framework\GameObject\Base">
+      <UniqueIdentifier>{a0c4d20b-530e-4708-b54e-492659cff534}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\GameObject\Manager">
+      <UniqueIdentifier>{f70b52c3-1fc6-4f97-a89d-6f8d999e67ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Component\Base">
+      <UniqueIdentifier>{e3f663c0-2058-4080-b30b-c4765c13a7de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Component\Manager">
+      <UniqueIdentifier>{ad073a42-1cfe-408f-ae1a-746541edb8bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Component\Components">
+      <UniqueIdentifier>{36c2f5e4-7f36-4bcb-be96-ab2b96676f4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\GameObject\GameObjects">
+      <UniqueIdentifier>{85fc9e8c-b96f-4c60-8030-0fa7b795815f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -42,23 +60,23 @@
     <ClCompile Include="TestScene.cpp">
       <Filter>Framework\Scene\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="GameObjectManager.cpp">
-      <Filter>Framework\GameObject</Filter>
-    </ClCompile>
     <ClCompile Include="GameObject.cpp">
-      <Filter>Framework\GameObject</Filter>
+      <Filter>Framework\GameObject\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectManager.cpp">
+      <Filter>Framework\GameObject\Manager</Filter>
     </ClCompile>
     <ClCompile Include="Component.cpp">
-      <Filter>Framework\Component</Filter>
+      <Filter>Framework\Component\Base</Filter>
     </ClCompile>
     <ClCompile Include="ComponentManager.cpp">
-      <Filter>Framework\Component</Filter>
-    </ClCompile>
-    <ClCompile Include="TestObject.cpp">
-      <Filter>Framework\GameObject</Filter>
+      <Filter>Framework\Component\Manager</Filter>
     </ClCompile>
     <ClCompile Include="TestComponent.cpp">
-      <Filter>Framework\Component</Filter>
+      <Filter>Framework\Component\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="TestObject.cpp">
+      <Filter>Framework\GameObject\GameObjects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -71,26 +89,26 @@
     <ClInclude Include="TestScene.h">
       <Filter>Framework\Scene\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="GameObjectManager.h">
-      <Filter>Framework\GameObject</Filter>
-    </ClInclude>
     <ClInclude Include="GameObject.h">
-      <Filter>Framework\GameObject</Filter>
-    </ClInclude>
-    <ClInclude Include="ComponentManager.h">
-      <Filter>Framework\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Component.h">
-      <Filter>Framework\Component</Filter>
+      <Filter>Framework\GameObject\Base</Filter>
     </ClInclude>
     <ClInclude Include="GameObjectId.h">
       <Filter>Framework\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="TestObject.h">
-      <Filter>Framework\GameObject</Filter>
+    <ClInclude Include="GameObjectManager.h">
+      <Filter>Framework\GameObject\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Framework\Component\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentManager.h">
+      <Filter>Framework\Component\Manager</Filter>
     </ClInclude>
     <ClInclude Include="TestComponent.h">
-      <Filter>Framework\Component</Filter>
+      <Filter>Framework\Component\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TestObject.h">
+      <Filter>Framework\GameObject\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

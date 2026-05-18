@@ -34,7 +34,6 @@ void SceneManager::Init()
 /// </summary>
 void SceneManager::Uninit()
 {
-
 	//	scenes‘S‚Ä‚ÌUnint()‚ð‰ñ‚µ‰ð•ú‚·‚é
 	for (auto& scene : m_scenes)
 	{

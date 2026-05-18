@@ -10,7 +10,7 @@ private:
 
 public:
 	Component(const GameObjectId _gameObjectId);
-	virtual ~Component() {};
+	virtual ~Component() = default;
 
 	virtual void Init() = 0;
 	virtual void Uninit() = 0;

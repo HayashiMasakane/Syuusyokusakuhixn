@@ -8,6 +8,8 @@
 
 class ComponentManager;
 class GameObject;
+class Scene;
+
 /// <summary>
 /// ゲームオブジェクトを管理するコピー禁止クラス
 /// 派生シーンの中で使用
@@ -15,7 +17,6 @@ class GameObject;
 class GameObjectManager
 {
 private:
-
 
 	std::vector<std::unique_ptr<GameObject>> m_gameObjects;
 	std::vector<GameObjectId> m_releasedGameObjectNum;
@@ -25,8 +26,8 @@ private:
 	
 
 
-	//	GameObjectManager(GameObjectManager&) = delete;
-	//GameObjectManager operator=(GameObjectManager&) = delete;
+	GameObjectManager(GameObjectManager&) = delete;
+	GameObjectManager operator=(GameObjectManager&) = delete;
 
 public:
 	GameObjectManager() = default;

@@ -29,9 +29,16 @@ public:
 
 };
 
+
 #include"ComponentManager.h"
+/// <summary>
+/// コンポーネントを自身に追加
+/// ComponentManagerのprivate:AddComponentにアクセス
+/// </summary>
+/// <typeparam name="T">つけたいコンポーネント</typeparam>
+/// <returns>つけたTのポインタ</returns>
 template<typename T>
 T* GameObject::AddComponent()
 {
-		return m_componentManager.AddComponent<T>(m_gameObjectId);
+	return m_componentManager.AddComponent<T>(m_gameObjectId);
 }
