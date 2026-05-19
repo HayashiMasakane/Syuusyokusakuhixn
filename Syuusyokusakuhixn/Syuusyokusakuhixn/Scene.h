@@ -23,6 +23,7 @@ public:
 	virtual void Draw() = 0;
 
 
+	ComponentManager& GetComponentManager();
 
 	template<typename T>
 	GameObject* AddGameObject(std::string _name);

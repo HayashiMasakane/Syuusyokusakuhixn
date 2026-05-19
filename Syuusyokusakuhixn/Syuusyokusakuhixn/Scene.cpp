@@ -12,3 +12,8 @@ Scene::~Scene()
 	m_componentManager.Uninit();
 	m_gameObjectManager.Uninit();
 }
+
+ComponentManager& Scene::GetComponentManager()
+{
+	return m_componentManager;
+}

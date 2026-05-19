@@ -11,9 +11,26 @@ SceneManager::~SceneManager()
 {
 	std::cout << "------------------------------------------------" << std::endl;
 	std::cout << "~SceneManager()" << std::endl;
-	std::cout << "------------------------------------------------" << std::endl;
 
 	Uninit();
+}
+
+void SceneManager::ChangeScene()
+{
+	std::cout << "------------------------------------------------" << std::endl;
+	std::cout << "ChangeScene" << std::endl;
+
+	if (m_mainScene)
+	{
+		std::cout << "DeleteMainScene " << std::endl;
+		DeleteMainScene();
+	}
+	std::cout << "Scene::Init()" << std::endl;
+
+	m_mainScene = m_scenes[m_nextMainSceneName].get();
+	m_mainScene->Init();
+
+	m_nextMainSceneName.clear();
 }
 
 /// <summary>
@@ -47,8 +64,6 @@ void SceneManager::Uninit()
 		std::cout << "Uninit():" << sceneName << std::endl;
 
 		scene.second->Uninit();
-
-		std::cout << std::endl;
 	}
 	m_scenes.clear();
 	m_mainScene = nullptr;
@@ -62,17 +77,8 @@ void SceneManager::Update()
 	//	シーンの変更予約があるなら新しいシーンに変更する
 	if (!m_nextMainSceneName.empty())
 	{
-		if (m_mainScene)
-		{
-			DeleteMainScene();
-		}
-
-		m_mainScene = m_scenes[m_nextMainSceneName].get();
-		m_mainScene->Init();
-
-		m_nextMainSceneName.clear();
+		ChangeScene();
 	}
-
 
 	m_mainScene->Update();
 }
@@ -108,7 +114,7 @@ void SceneManager::ChangeMainScene(const std::string _name)
 /// </summary>
 void SceneManager::DeleteMainScene()
 {
-	std::cout << "DeleteScene:m_mainScene" << std::endl;
+	std::cout << "Scene::Uninit()" << std::endl;
 	m_mainScene->Uninit();
 }
 

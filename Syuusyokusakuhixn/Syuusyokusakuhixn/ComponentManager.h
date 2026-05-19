@@ -18,10 +18,18 @@ private:
 	friend GameObject;  //  AddComponentを使用
 
 
+	using ComponentId = std::type_index;
+	using OwnerComponentMap = std::unordered_map<GameObjectId, std::vector<void*>>;
+
+
 	// 型ごとに vector<T> を保持するための辞書
 	//  type_index  :Component派生クラス
 	//  void*       :vector<T>の先頭アドレスを入れる
-	std::unordered_map<std::type_index, void*> m_componentMap;
+	std::unordered_map<ComponentId, void*> m_componentMap;
+
+
+	//	m_componentMapをO(1)にするための辞書
+	std::unordered_map< ComponentId, OwnerComponentMap > m_ownerComponentMap;
 
 
 	ComponentManager(ComponentManager&) = delete;
@@ -35,6 +43,7 @@ private:
 	template<typename T>
 	T* AddComponent(const GameObjectId& _objectId);
 
+
 public:
 	ComponentManager() = default;
 	~ComponentManager();
@@ -44,9 +53,13 @@ public:
 
 
 
-	//	オブジェクトのTコンポーネント群を取得
+	//	オブジェクトに引っ付いているのTコンポーネント群を取得
 	template<typename T>
 	std::vector<T*> GetComponents(const GameObjectId _objectId);
+
+	//	Tコンポーネント群を取得
+	template<typename T>
+	std::vector<T>& GetAllComponents();
 
 
 };
@@ -90,6 +103,9 @@ T* ComponentManager::AddComponent(const GameObjectId& _objectId)
 	arr.push_back(T(_objectId));
 	T* comp = &arr.back();
 
+	//	辞書に登録
+	m_ownerComponentMap[typeid(T)][_objectId].push_back(static_cast<void*>(comp));
+
 	std::cout << "AddComponent::GameObjectId:" << _objectId << std::endl;
 	return comp;
 }
@@ -105,15 +121,35 @@ std::vector<T*> ComponentManager::GetComponents(const GameObjectId _objectId)
 {
 	std::vector<T*> result;
 
-	//	T配列から_オブジェクトIdに対応した物を代入
-	auto& arr = GetMap<T>();
-	for (auto& component : arr)
+	auto typeKey = std::type_index(typeid(T));
+
+	//	Tがないならはじく
+	if (!m_ownerComponentMap.contains(typeKey))
 	{
-		if (component._objectId == _objectId)
-		{
-			result.push_back(component);
-		}
+		return result;
+	}
+
+
+	auto& ownerMap = m_ownerComponentMap[typeKey];
+
+	//	オブジェクトにTがないならはじく
+	if (!ownerMap.contains(_objectId))
+	{
+		return result;
+	}
+
+	//	対応したコンポーネントを入れて戻り値にする
+	for (void* p : ownerMap[_objectId])
+	{
+		result.push_back(static_cast<T*>(p));
+
 	}
 
 	return result;
+}
+
+template<typename T>
+std::vector<T>& ComponentManager::GetAllComponents()
+{
+	return GetMap<T>();
 }

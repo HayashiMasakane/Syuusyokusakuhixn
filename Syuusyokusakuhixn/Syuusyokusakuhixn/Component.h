@@ -8,6 +8,9 @@ class Component
 private:
 	const GameObjectId m_gameObjectId;
 
+	bool m_deleteFlag = false;	//	íœ‚µ‚½‚¢‚Æ‚«‚Ítrue‚É‚·‚é
+
+
 public:
 	Component(const GameObjectId& _gameObjectId);
 	virtual ~Component() = default;
@@ -17,5 +20,8 @@ public:
 	//	Update‚ÍƒVƒXƒeƒ€‚Å‚·‚é
 
 	const GameObjectId& GetGameObjectId();
+
+	void SetDeleteFlag();
+	const bool GetDeleteFlag();
 
 };

@@ -22,9 +22,11 @@ void GameObjectManager::Init()
 /// </summary>
 void GameObjectManager::Uninit()
 {
-	std::cout << "m_gameObjectDictionary.clear()" << std::endl;
+	std::cout << "m_gameObjectDictionary.clear()quantity:"<< m_gameObjectDictionary.size()<< std::endl;
 	m_gameObjectDictionary.clear();
-	std::cout << "m_gameObjects.clear()" << std::endl;
+
+	std::cout << "m_gameObjects.clear() quantity:" << m_gameObjects.size() << std::endl;
+
 	m_gameObjects.clear();
 }
 

@@ -3,7 +3,7 @@
 #include"TestComponent.h"
 
 
-TestObject::TestObject( GameObjectId _gameObjectId, ComponentManager& _componentManager) : GameObject(_gameObjectId, _componentManager)
+TestObject::TestObject(GameObjectId _gameObjectId, ComponentManager& _componentManager) : GameObject(_gameObjectId, _componentManager)
 {
 }
 
@@ -11,6 +11,7 @@ TestObject::TestObject( GameObjectId _gameObjectId, ComponentManager& _component
 void TestObject::Init()
 {
 	TestComponent* testCom = AddComponent<TestComponent>();
+
 }
 
 void TestObject::Uninit()

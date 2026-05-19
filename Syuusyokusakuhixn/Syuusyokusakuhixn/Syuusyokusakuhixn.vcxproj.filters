@@ -46,6 +46,9 @@
     <Filter Include="Framework\GameObject\GameObjects">
       <UniqueIdentifier>{85fc9e8c-b96f-4c60-8030-0fa7b795815f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Framework\System">
+      <UniqueIdentifier>{18ca308f-1142-4aa1-bee2-8619f1f14c71}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -77,6 +80,9 @@
     </ClCompile>
     <ClCompile Include="TestObject.cpp">
       <Filter>Framework\GameObject\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="TestSystem.cpp">
+      <Filter>Framework\System</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -110,5 +116,12 @@
     <ClInclude Include="TestObject.h">
       <Filter>Framework\GameObject\GameObjects</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="TestSystem.h">
+      <Filter>Framework\System</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Syuusyokusakuhixn.rc" />
   </ItemGroup>
 </Project>
