@@ -53,17 +53,25 @@ namespace Framework
 		template<typename T>
 		inline GameObject* GameObjectManager::AddGameObject(std::string _gameObjectName)
 		{
-			// todo:AddGameObjectの中身を記述中
-			if(m_ga)
-			MessageBoxA(
-				HWND hWnd,        // 親ウィンドウ（NULLでOK）
-				LPCSTR lpText,    // 本文（メッセージ）
-				LPCSTR lpCaption, // タイトル
-				UINT uType        // アイコンやボタンの種類
-			);
+			//	すでに引数内の名前が使われているなら弾く
+			if (m_gameObjectMap.contains())
+			{
+				MessageBoxA(
+					NULL,        // 親ウィンドウ（NULLでOK）
+					"シーン内で同じオブジェクト名があります。",    // 本文（メッセージ）
+					"AddGameObject", // タイトル
+					MB_OK        // アイコンやボタンの種類
+				);
 
+				return nullptr;
 
-			return nullptr;
+			}
+
+			//	オブジェクトの生成し返す
+			m_gameObjectMap[_gameObjectName] = std::make_unique<T>();
+			
+			return m_gameObjectMap[_gameObjectName];
+
 		}
 
 	}//	Object

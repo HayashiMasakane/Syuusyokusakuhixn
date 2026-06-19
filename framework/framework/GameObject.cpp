@@ -1,25 +1,14 @@
 #include "GameObject.h"
 #include "ObjectManager.h"
+#include "GameObjectManager.h"
 
 
 namespace Framework
 {
-	namespace Object
+	namespace GameObject
 	{
-		Framework::GameObject::GameObjectManager::~GameObjectManager()
-		{
-		}
-		void Object::Init()
-		{
-		}
-
-		void Object::Uninit()
-		{
-		}
-
-
-
-
+		
+	
 
 
 
