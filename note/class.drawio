@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="ページ-1" id="3FtfRQ7UO4VPT2bXUK-G">
-    <mxGraphModel dx="4138" dy="1874" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1427" dy="646" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -15,7 +15,7 @@
         <mxCell id="ejeEYgNNTc2L-esswQbN-8" parent="ejeEYgNNTc2L-esswQbN-6" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
           <mxGeometry height="8" width="430" y="80" as="geometry" />
         </mxCell>
-        <mxCell id="ejeEYgNNTc2L-esswQbN-9" parent="ejeEYgNNTc2L-esswQbN-6" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+Init():void&lt;br&gt;+Uninit():void&lt;br&gt;&lt;br&gt;+AddGameObject&amp;lt;T&amp;gt;(std::string):void&lt;br&gt;+GetGameObect(std::string):GameObject" vertex="1">
+        <mxCell id="ejeEYgNNTc2L-esswQbN-9" parent="ejeEYgNNTc2L-esswQbN-6" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+Init():void&lt;br&gt;+Uninit():void&lt;br&gt;&lt;br&gt;+AddGameObject&amp;lt;T&amp;gt;(std::string):void&lt;br&gt;+GetGameObect(std::string):GameObject&lt;br&gt;&lt;br&gt;+SetDeleteFlag():void&lt;br&gt;+GetDeleteFlag():bool" vertex="1">
           <mxGeometry height="132" width="430" y="88" as="geometry" />
         </mxCell>
         <mxCell id="ejeEYgNNTc2L-esswQbN-17" edge="1" parent="1" source="ejeEYgNNTc2L-esswQbN-12" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;endArrow=diamond;endFill=1;" target="ejeEYgNNTc2L-esswQbN-6">
