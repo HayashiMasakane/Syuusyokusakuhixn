@@ -1,5 +1,4 @@
 #include "GameObject.h"
-#include "ObjectManager.h"
 #include "GameObjectManager.h"
 
 
@@ -10,7 +9,14 @@ namespace Framework
 		
 	
 
+		void GameObject::Init()
+		{
 
+		}
+		void GameObject::Uninit()
+		{
+
+		}
 
 
 

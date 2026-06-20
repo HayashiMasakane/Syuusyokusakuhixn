@@ -2,6 +2,7 @@
 #include<unordered_map>
 #include<memory>
 #include<string>
+#include<Windows.h>
 
 
 namespace Framework
@@ -36,13 +37,12 @@ namespace Framework
 			GameObject* AddGameObject(std::string _gameObjectName);
 			GameObject* GetGameObject(std::string _gameObjectName);
 
-			bool SetGameObjectDeleteFlag();
+			void SetGameObjectDeleteFlag();
 			bool GetGameObjectDeleteFlag();
 
 		};
 
 
-#include<Windows.h>
 		/// <summary>
 		/// ゲームオブジェクトを追加する
 		/// シーン内で同じ名前があるなら追加せずにnullptrを返す
@@ -54,13 +54,15 @@ namespace Framework
 		inline GameObject* GameObjectManager::AddGameObject(std::string _gameObjectName)
 		{
 			//	すでに引数内の名前が使われているなら弾く
-			if (m_gameObjectMap.contains())
+			if (m_gameObjectMap.contains(_gameObjectName))
 			{
+				std::string msg =
+					"引数名:[" + _gameObjectName + "]のゲームオブジェクトは既に登録されています。";
 				MessageBoxA(
 					NULL,        // 親ウィンドウ（NULLでOK）
-					"シーン内で同じオブジェクト名があります。",    // 本文（メッセージ）
+					msg.c_str(),    // 本文（メッセージ）
 					"AddGameObject", // タイトル
-					MB_OK        // アイコンやボタンの種類
+					MB_OK | MB_ICONWARNING        // アイコンやボタンの種類
 				);
 
 				return nullptr;
@@ -69,10 +71,11 @@ namespace Framework
 
 			//	オブジェクトの生成し返す
 			m_gameObjectMap[_gameObjectName] = std::make_unique<T>();
-			
-			return m_gameObjectMap[_gameObjectName];
+
+			return m_gameObjectMap[_gameObjectName].get();
 
 		}
+
 
 	}//	Object
 }//	Framework

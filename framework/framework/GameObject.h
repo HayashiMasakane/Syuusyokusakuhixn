@@ -10,11 +10,10 @@ namespace Framework
 		/// </summary>
 		class GameObject
 		{
-
 		protected:
 			//	派生オブジェクトの処理用
-			virtual void OnInit() = 0;
-			virtual void OnUninit() = 0;
+		//	virtual void OnInit() = 0;
+		//	virtual void OnUninit() = 0;
 
 
 
