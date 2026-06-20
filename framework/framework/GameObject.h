@@ -10,10 +10,14 @@ namespace Framework
 		/// </summary>
 		class GameObject
 		{
+		private:
+			bool m_deleteFlag = false;
+
+
 		protected:
 			//	派生オブジェクトの処理用
-		//	virtual void OnInit() = 0;
-		//	virtual void OnUninit() = 0;
+			virtual void OnInit() = 0;
+			virtual void OnUninit() = 0;
 
 
 
@@ -23,6 +27,9 @@ namespace Framework
 
 			void Init();
 			void Uninit();
+
+			void SetDeleteFlag();
+			bool GetDeleteFlag();
 
 		};
 

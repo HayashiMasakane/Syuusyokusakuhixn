@@ -5,8 +5,18 @@ namespace Framework
 {
 	namespace GameObject
 	{
+		/// <summary>
+		/// デストラクタ
+		/// ソリッド変数すべてを削除
+		/// </summary>
 		GameObjectManager::~GameObjectManager()
 		{
+			for (auto& object : m_gameObjectMap)
+			{
+				object.second->Uninit();
+			}
+
+			m_gameObjectMap.clear();
 		}
 		void GameObjectManager::Init()
 		{
@@ -46,29 +56,32 @@ namespace Framework
 					"GetGameObject", // タイトル
 					MB_OK | MB_ICONWARNING       // アイコンやボタンの種類
 				);
+				return nullptr;
+
 			}
 
+			return	m_gameObjectMap[_gameObjectName].get();
 
-			return nullptr;
 		}
 
 		/// <summary>
-		/// ゲームオブジェクトを削除処理関数を動かす予約をする。
-		/// これとは別でオブジェクト自身が
+		/// 削除予約されているオブジェクトを削除していく
 		/// </summary>
-		void GameObjectManager::SetGameObjectDeleteFlag()
+		void GameObjectManager::DeteleGameObject()
 		{
-			m_gameObjectDeleteFlag = true;
+
+			for (auto& object : m_gameObjectMap)
+			{
+				//	削除予約されているなら削除する
+				if (object.second->GetDeleteFlag())
+				{
+					object.second->Uninit();
+					
+				}
+
+			}
+
 		}
 
-		/// <summary>
-		/// ゲームオブジェクトの削除予約がされているかどうかを取得
-		/// </summary>
-		bool GameObjectManager::GetGameObjectDeleteFlag()
-		{
-			return m_gameObjectDeleteFlag;
-		}
-
-
-	}
-}
+	}//	GameObject
+}//	Framework

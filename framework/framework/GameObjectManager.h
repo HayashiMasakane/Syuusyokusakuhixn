@@ -24,7 +24,6 @@ namespace Framework
 			/// unique_ptr<Object> オブジェクトのポインタ
 			/// </summary>
 			std::unordered_map<std::string, std::unique_ptr<GameObject>> m_gameObjectMap;
-			bool m_gameObjectDeleteFlag = false;
 
 		public:
 			GameObjectManager() = default;
@@ -37,8 +36,7 @@ namespace Framework
 			GameObject* AddGameObject(std::string _gameObjectName);
 			GameObject* GetGameObject(std::string _gameObjectName);
 
-			void SetGameObjectDeleteFlag();
-			bool GetGameObjectDeleteFlag();
+			void DeteleGameObject();
 
 		};
 

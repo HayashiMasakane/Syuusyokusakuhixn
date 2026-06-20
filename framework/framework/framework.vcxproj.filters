@@ -20,6 +20,9 @@
     <Filter Include="Main">
       <UniqueIdentifier>{4d67a4fa-130e-4bb6-8b38-9deaebbb80bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Framework\Object\Objects">
+      <UniqueIdentifier>{deb6640a-8c5d-433f-ade9-8a4300688fa0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObjectManager.h">
@@ -28,6 +31,7 @@
     <ClInclude Include="GameObject.h">
       <Filter>Framework\Object\Base</Filter>
     </ClInclude>
+    <ClInclude Include="TestObject1.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameObjectManager.cpp">
@@ -39,5 +43,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="TestObject1.cpp" />
   </ItemGroup>
 </Project>
