@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{fef93f54-bd1a-4045-b539-4173e6e78a07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Object">
+      <UniqueIdentifier>{f106a61d-ecdf-4642-93eb-bab7469a2ebd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Object\Base">
+      <UniqueIdentifier>{5efbc66e-6451-4d11-a1f9-0e5f9dc4d3b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Object\Manager">
+      <UniqueIdentifier>{b7d7cb22-b3cc-4fdf-aba4-81108d02f84a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{4d67a4fa-130e-4bb6-8b38-9deaebbb80bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Object\Objects">
+      <UniqueIdentifier>{deb6640a-8c5d-433f-ade9-8a4300688fa0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameObjectManager.h">
+      <Filter>Framework\Object\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Framework\Object\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="TestObject1.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameObjectManager.cpp">
+      <Filter>Framework\Object\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Framework\Object\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="TestObject1.cpp" />
+  </ItemGroup>
+</Project>
