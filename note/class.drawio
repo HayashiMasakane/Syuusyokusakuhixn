@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="ページ-1" id="3FtfRQ7UO4VPT2bXUK-G">
-    <mxGraphModel dx="1523" dy="646" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1345" dy="646" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -77,18 +77,18 @@
           <mxGeometry height="110" width="160" y="60" as="geometry" />
         </mxCell>
         <mxCell id="0LD8aQBTy9XcoKkr_I5u-34" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="SceneManager" vertex="1">
-          <mxGeometry height="210" width="430" x="310" y="910" as="geometry">
+          <mxGeometry height="260" width="430" x="310" y="910" as="geometry">
             <mxRectangle height="30" width="160" x="30" y="340" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="0LD8aQBTy9XcoKkr_I5u-35" parent="0LD8aQBTy9XcoKkr_I5u-34" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="-std::unordered_map&amp;lt;std::string,&amp;nbsp;&lt;span style=&quot;color: rgba(0, 0, 0, 0.8); font-family: Roboto, Helvetica, sans-serif; font-size: 14px; line-height: 100%;&quot;&gt;unique_ptr&amp;lt;Scene&amp;gt;&lt;/span&gt;&amp;gt;m_sceneMap;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="0LD8aQBTy9XcoKkr_I5u-35" parent="0LD8aQBTy9XcoKkr_I5u-34" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="-std::unordered_map&amp;lt;std::string,&amp;nbsp;&lt;span style=&quot;color: rgba(0, 0, 0, 0.8); font-family: Roboto, Helvetica, sans-serif; font-size: 14px; line-height: 100%;&quot;&gt;unique_ptr&amp;lt;Scene&amp;gt;&lt;/span&gt;&amp;gt;m_sceneMap;&lt;div&gt;-m_mainScene:Scene*&lt;/div&gt;" vertex="1">
           <mxGeometry height="54" width="430" y="26" as="geometry" />
         </mxCell>
         <mxCell id="0LD8aQBTy9XcoKkr_I5u-36" parent="0LD8aQBTy9XcoKkr_I5u-34" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
           <mxGeometry height="8" width="430" y="80" as="geometry" />
         </mxCell>
-        <mxCell id="0LD8aQBTy9XcoKkr_I5u-37" parent="0LD8aQBTy9XcoKkr_I5u-34" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+Init():void&lt;br&gt;+Uninit():void&lt;br&gt;&lt;br&gt;+AddGameObject&amp;lt;T&amp;gt;(std::string):GameObject*&lt;br&gt;&lt;br&gt;+ChangeScenei(std::string):void" vertex="1">
-          <mxGeometry height="122" width="430" y="88" as="geometry" />
+        <mxCell id="0LD8aQBTy9XcoKkr_I5u-37" parent="0LD8aQBTy9XcoKkr_I5u-34" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;font-weight: 700; text-align: center;&quot;&gt;SceneManager(const&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-weight: 700; text-align: center;&quot;&gt;SceneManager&amp;amp;&lt;/span&gt;&lt;span style=&quot;font-weight: 700; text-align: center;&quot;&gt;)=delete&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: 700; text-align: center;&quot;&gt;SceneManager=(const&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-weight: 700; text-align: center;&quot;&gt;SceneManager&amp;amp;&lt;/span&gt;&lt;span style=&quot;font-weight: 700; text-align: center;&quot;&gt;)=delete&lt;/span&gt;&lt;span style=&quot;font-weight: 700; text-align: center;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;br&gt;+Init():void&lt;br&gt;+Uninit():void&lt;br&gt;&lt;br&gt;+GetInstans():SceneManager&amp;amp;&lt;div&gt;+GetMainGameObjectManager():GameObjectManager;&lt;br&gt;&lt;br&gt;&lt;br&gt;+AddScene&amp;lt;T&amp;gt;(std::string):void&lt;br&gt;+ChangeScene(std::string):void&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="172" width="430" y="88" as="geometry" />
         </mxCell>
         <mxCell id="0LD8aQBTy9XcoKkr_I5u-38" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Scene" vertex="1">
           <mxGeometry height="170" width="160" x="820" y="930" as="geometry">
@@ -101,7 +101,7 @@
         <mxCell id="0LD8aQBTy9XcoKkr_I5u-40" parent="0LD8aQBTy9XcoKkr_I5u-38" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
           <mxGeometry height="8" width="160" y="52" as="geometry" />
         </mxCell>
-        <mxCell id="0LD8aQBTy9XcoKkr_I5u-41" parent="0LD8aQBTy9XcoKkr_I5u-38" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+Init():void&lt;div&gt;+Uninit():void&amp;nbsp;&lt;br&gt;#OnInit():void&amp;nbsp;&lt;br&gt;#OnUninit():void&amp;nbsp;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;+SetDeleteFlag();&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+GetDeleteFlag();&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="0LD8aQBTy9XcoKkr_I5u-41" parent="0LD8aQBTy9XcoKkr_I5u-38" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+Init():void&lt;div&gt;+Uninit():void&amp;nbsp;&lt;br&gt;#OnInit():void&amp;nbsp;&lt;br&gt;#OnUninit():void&amp;nbsp;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="110" width="160" y="60" as="geometry" />
         </mxCell>
         <mxCell id="0LD8aQBTy9XcoKkr_I5u-42" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="派生Scene" vertex="1">
