@@ -23,6 +23,21 @@
     <Filter Include="Framework\Object\Objects">
       <UniqueIdentifier>{deb6640a-8c5d-433f-ade9-8a4300688fa0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Framework\Scene">
+      <UniqueIdentifier>{4d38b279-3bf9-46d2-9072-f59edd042ac3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Scene\Base">
+      <UniqueIdentifier>{2d0a795f-db52-49e7-b7ed-d0e2a524df48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Scene\Manager">
+      <UniqueIdentifier>{a52cc4c5-e944-4e45-bdcb-c75e2886206a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Test">
+      <UniqueIdentifier>{1519a9f1-8d66-44a5-b359-1dc70a2e4773}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Scene\Scenes">
+      <UniqueIdentifier>{b16d03ce-d617-4848-a804-9f0c8f826a8a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObjectManager.h">
@@ -31,7 +46,15 @@
     <ClInclude Include="GameObject.h">
       <Filter>Framework\Object\Base</Filter>
     </ClInclude>
-    <ClInclude Include="TestObject1.h" />
+    <ClInclude Include="SceneManager.h">
+      <Filter>Framework\Scene\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="TestObject1.h">
+      <Filter>Framework\Object\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Framework\Scene\Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameObjectManager.cpp">
@@ -43,6 +66,14 @@
     <ClCompile Include="main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="TestObject1.cpp" />
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Framework\Scene\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="TestObject1.cpp">
+      <Filter>Framework\Object\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Framework\Scene\Base</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
