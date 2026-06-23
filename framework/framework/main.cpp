@@ -1,7 +1,12 @@
+//	オブジェクト関係
 #include"GameObjectManager.h"
-#include"SceneManager.h"
 #include"GameObject.h"
 #include"TestObject1.h"
+
+//	scene関係
+#include"SceneManager.h"
+#include"Scene.h"
+
 //	エントリーポイント
 int main()
 {
@@ -22,6 +27,17 @@ int main()
 	//gameObjectManager.DeteleGameObject();	//	予約した場合の確認
 	}
 
+	
+	Framework::Scene::SceneManager::GetInstanse().Update();
+	//	AddSceneのエラー確認
+	Framework::Scene::SceneManager::GetInstanse().AddScene<Scene::Scene>("testScene");
+	Framework::Scene::SceneManager::GetInstanse().AddScene<Scene::Scene>("testScene");
+	
+	//	ChangeSceneのエラー確認
+	Framework::Scene::SceneManager::GetInstanse().ChangeScene("testScene");
+	Framework::Scene::SceneManager::GetInstanse().ChangeScene("ellr");
+
+	Framework::Scene::SceneManager::GetInstanse().Update();
 
 
 

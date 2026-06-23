@@ -21,7 +21,8 @@ namespace Framework
 			//	unique_ptr シーンのポインタ
 			std::unordered_map < std::string, std::unique_ptr<Scene>> m_sceneMap;
 
-			Scene* m_mainScene = nullptr;
+			Scene* m_pMainScene = nullptr;
+			std::string m_nextMainSceneName;
 
 			SceneManager() = default;
 			~SceneManager();
@@ -29,11 +30,7 @@ namespace Framework
 			SceneManager& operator=(const SceneManager&) = delete;
 
 		public:
-			static SceneManager& GetInstanse()
-			{
-				static SceneManager instanse;
-				return instanse;
-			}
+			static SceneManager& GetInstanse();
 
 			void Init();
 			void Uninit();
