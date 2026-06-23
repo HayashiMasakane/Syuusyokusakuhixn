@@ -5,7 +5,7 @@
 
 //	scene関係
 #include"SceneManager.h"
-#include"Scene.h"
+#include"TestScene1.h"
 
 //	エントリーポイント
 int main()
@@ -28,16 +28,14 @@ int main()
 	}
 
 	
-	Framework::Scene::SceneManager::GetInstanse().Update();
 	//	AddSceneのエラー確認
-	Framework::Scene::SceneManager::GetInstanse().AddScene<Scene::Scene>("testScene");
-	Framework::Scene::SceneManager::GetInstanse().AddScene<Scene::Scene>("testScene");
+	Framework::Scene::SceneManager::GetInstanse().AddScene<Scene::Scenes::TestScene1>("testScene");
 	
 	//	ChangeSceneのエラー確認
 	Framework::Scene::SceneManager::GetInstanse().ChangeScene("testScene");
-	Framework::Scene::SceneManager::GetInstanse().ChangeScene("ellr");
 
 	Framework::Scene::SceneManager::GetInstanse().Update();
+
 
 
 

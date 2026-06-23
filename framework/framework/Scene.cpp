@@ -14,7 +14,7 @@ namespace Framework
 		/// </summary>
 		void Scene::Init()
 		{
-
+			OnInit();
 		}
 
 		/// <summary>
@@ -23,7 +23,8 @@ namespace Framework
 		/// </summary>
 		void Scene::Uninit()
 		{
-
+			OnUninit();
+			m_gameObjectManager.Uninit();
 		}
 
 		/// <summary>
@@ -32,7 +33,7 @@ namespace Framework
 		/// </summary>
 		void Scene::Update()
 		{
-
+			OnUpdate();
 		}
 
 		/// <summary>
@@ -41,7 +42,16 @@ namespace Framework
 		/// </summary>
 		void Scene::Draw()
 		{
+			OnDraw();
+		}
 
+		/// <summary>
+		/// ゲームオブジェクトマネージャの参照を取得
+		/// </summary>
+		/// <returns></returns>
+		GameObject::GameObjectManager& Scene::GetGameObjectManager()
+		{
+			return m_gameObjectManager;
 		}
 
 

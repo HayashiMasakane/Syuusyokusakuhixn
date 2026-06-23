@@ -1,4 +1,5 @@
 #pragma once
+#include"GameObjectManager.h"
 
 namespace Framework
 {
@@ -7,13 +8,14 @@ namespace Framework
 		class Scene
 		{
 		private:
+			GameObject::GameObjectManager m_gameObjectManager;
 
 		protected:
 			//	派生オブジェクトの処理用
-			//virtual void OnInit() = 0;
-			//virtual void OnUninit() = 0;
-			//virtual void OnUpdate() = 0;
-			//virtual void OnDraw() = 0;
+			virtual void OnInit() = 0;
+			virtual void OnUninit() = 0;
+			virtual void OnUpdate() = 0;
+			virtual void OnDraw() = 0;
 
 		public:
 			Scene() = default;
@@ -23,6 +25,8 @@ namespace Framework
 			void Uninit();
 			void Update();
 			void Draw();
+
+			GameObject::GameObjectManager& GetGameObjectManager();
 
 		};
 

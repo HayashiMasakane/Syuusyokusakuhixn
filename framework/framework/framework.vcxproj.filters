@@ -32,9 +32,6 @@
     <Filter Include="Framework\Scene\Manager">
       <UniqueIdentifier>{a52cc4c5-e944-4e45-bdcb-c75e2886206a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Framework\Test">
-      <UniqueIdentifier>{1519a9f1-8d66-44a5-b359-1dc70a2e4773}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Framework\Scene\Scenes">
       <UniqueIdentifier>{b16d03ce-d617-4848-a804-9f0c8f826a8a}</UniqueIdentifier>
     </Filter>
@@ -55,6 +52,9 @@
     <ClInclude Include="Scene.h">
       <Filter>Framework\Scene\Base</Filter>
     </ClInclude>
+    <ClInclude Include="TestScene1.h">
+      <Filter>Framework\Scene\Scenes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameObjectManager.cpp">
@@ -74,6 +74,9 @@
     </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>Framework\Scene\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="TestScene1.cpp">
+      <Filter>Framework\Scene\Scenes</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -56,11 +56,16 @@ namespace Framework
 		void SceneManager::Update()
 		{
 			//	シーン切り替えの予約があるなら切り替える
-			if (m_nextMainSceneName.empty())
+			if (!m_nextMainSceneName.empty())
 			{
-				m_pMainScene->Uninit();
+				if (m_pMainScene != nullptr)
+				{
+					m_pMainScene->Uninit();
+				}
 				m_pMainScene = m_sceneMap[m_nextMainSceneName].get();
 				m_pMainScene->Init();
+
+				m_nextMainSceneName.clear();
 			}
 
 			//	更新処理
@@ -90,6 +95,8 @@ namespace Framework
 					"ChangeScene", // タイトル
 					MB_OK | MB_ICONWARNING    // アイコンやボタンの種類
 				);
+
+				return;
 			}
 
 			m_nextMainSceneName = _sceneName;
