@@ -35,6 +35,18 @@
     <Filter Include="Framework\Scene\Scenes">
       <UniqueIdentifier>{b16d03ce-d617-4848-a804-9f0c8f826a8a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main\App">
+      <UniqueIdentifier>{6493c01a-2b05-42b2-9a12-47d94206ce58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\Game">
+      <UniqueIdentifier>{2706bc3a-c21e-4dc9-9562-41bf0e889023}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{c78b5dad-c427-422d-b639-2da6e217769a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="エイリアンす">
+      <UniqueIdentifier>{46591fdd-9697-4518-ac33-0408a4c53856}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObjectManager.h">
@@ -54,6 +66,19 @@
     </ClInclude>
     <ClInclude Include="TestScene1.h">
       <Filter>Framework\Scene\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Main\App</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="Game.h">
+      <Filter>Main\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="commontypes.h">
+      <Filter>エイリアンす</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +102,13 @@
     </ClCompile>
     <ClCompile Include="TestScene1.cpp">
       <Filter>Framework\Scene\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Main\App</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="Game.cpp">
+      <Filter>Main\Game</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

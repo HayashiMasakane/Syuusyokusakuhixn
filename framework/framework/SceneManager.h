@@ -35,6 +35,7 @@ namespace Framework
 			void Init();
 			void Uninit();
 			void Update();
+			void Draw();
 
 			template<typename T>
 			void AddScene(std::string _sceneName);

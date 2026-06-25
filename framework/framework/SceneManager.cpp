@@ -39,6 +39,7 @@ namespace Framework
 		/// </summary>
 		void SceneManager::Init()
 		{
+
 		}
 
 		/// <summary>
@@ -46,11 +47,13 @@ namespace Framework
 		/// </summary>
 		void SceneManager::Uninit()
 		{
+
 		}
 
 
 		/// <summary>
 		/// 更新処理
+		/// メインシーンを更新
 		/// もしシーンの切り替え予約しているなら切り替える
 		/// </summary>
 		void SceneManager::Update()
@@ -72,9 +75,20 @@ namespace Framework
 			if (m_pMainScene != nullptr)
 			{
 				m_pMainScene->Update();
-				m_pMainScene->Draw();
 			}
 
+		}
+
+		/// <summary>
+		/// 描画処理
+		/// メインシーンを描画
+		/// </summary>
+		void SceneManager::Draw()
+		{
+			if (m_pMainScene != nullptr)
+			{
+				m_pMainScene->Draw();
+			}
 		}
 
 		/// <summary>
