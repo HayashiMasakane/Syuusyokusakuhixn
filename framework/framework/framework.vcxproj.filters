@@ -47,6 +47,9 @@
     <Filter Include="エイリアンす">
       <UniqueIdentifier>{46591fdd-9697-4518-ac33-0408a4c53856}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Framework\Object\Objects\Primitive">
+      <UniqueIdentifier>{e19167c6-1283-49be-8095-409d357740e1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObjectManager.h">
@@ -80,6 +83,9 @@
     <ClInclude Include="commontypes.h">
       <Filter>エイリアンす</Filter>
     </ClInclude>
+    <ClInclude Include="Cube.h">
+      <Filter>Framework\Object\Objects\Primitive</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameObjectManager.cpp">
@@ -109,6 +115,9 @@
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Game.cpp">
       <Filter>Main\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Cube.cpp">
+      <Filter>Framework\Object\Objects\Primitive</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
