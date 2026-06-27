@@ -17,7 +17,7 @@ namespace Framework
 			void TestScene1::OnInit()
 			{
 				Scene::GetGameObjectManager().AddGameObject<GameObject::GameObjects::Primitive::CubeObject>("cubeObject1");
-
+				
 
 			}
 			void TestScene1::OnUninit()

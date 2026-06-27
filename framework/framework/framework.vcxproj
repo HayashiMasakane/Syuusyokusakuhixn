@@ -142,6 +142,8 @@
     <ClInclude Include="CMesh.h" />
     <ClInclude Include="CMeshRenderer.h" />
     <ClInclude Include="Commontypes.h" />
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="ComponentManager.h" />
     <ClInclude Include="CShader.h" />
     <ClInclude Include="CubeDrawer.h" />
     <ClInclude Include="CubeObject.h" />
@@ -160,6 +162,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="ComponentManager.cpp" />
     <ClCompile Include="CShader.cpp" />
     <ClCompile Include="CubeDrawer.cpp" />
     <ClCompile Include="CubeObject.cpp" />
