@@ -136,11 +136,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
-    <ClInclude Include="commontypes.h" />
+    <ClInclude Include="CCubeMesh.h" />
+    <ClInclude Include="CIndexBuffer.h" />
+    <ClInclude Include="CMaterial.h" />
+    <ClInclude Include="CMesh.h" />
+    <ClInclude Include="CMeshRenderer.h" />
+    <ClInclude Include="Commontypes.h" />
+    <ClInclude Include="CShader.h" />
+    <ClInclude Include="CubeDrawer.h" />
+    <ClInclude Include="CubeObject.h" />
+    <ClInclude Include="CVertexBuffer.h" />
+    <ClInclude Include="dx11helper.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectManager.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="noncopyable.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
@@ -149,6 +160,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="CShader.cpp" />
+    <ClCompile Include="CubeDrawer.cpp" />
+    <ClCompile Include="CubeObject.cpp" />
+    <ClCompile Include="dx11helper.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />

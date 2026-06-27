@@ -47,6 +47,12 @@
     <Filter Include="エイリアンす">
       <UniqueIdentifier>{46591fdd-9697-4518-ac33-0408a4c53856}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Renderer\ObjectDraw">
+      <UniqueIdentifier>{92963c08-b22a-4b7d-98f2-150b663edab3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Component">
+      <UniqueIdentifier>{556d591d-bc71-4af4-996d-950d7ad3a088}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObjectManager.h">
@@ -73,12 +79,45 @@
     <ClInclude Include="main.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="Renderer.h" />
     <ClInclude Include="Game.h">
       <Filter>Main\Game</Filter>
     </ClInclude>
-    <ClInclude Include="commontypes.h">
+    <ClInclude Include="Commontypes.h">
       <Filter>エイリアンす</Filter>
+    </ClInclude>
+    <ClInclude Include="CubeObject.h" />
+    <ClInclude Include="Renderer.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CubeDrawer.h">
+      <Filter>Renderer\ObjectDraw</Filter>
+    </ClInclude>
+    <ClInclude Include="CMeshRenderer.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CMaterial.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CCubeMesh.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CShader.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="dx11helper.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="noncopyable.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CMesh.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CIndexBuffer.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CVertexBuffer.h">
+      <Filter>Renderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -106,9 +145,21 @@
     <ClCompile Include="Application.cpp">
       <Filter>Main\App</Filter>
     </ClCompile>
-    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Game.cpp">
       <Filter>Main\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="CubeObject.cpp" />
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CubeDrawer.cpp">
+      <Filter>Renderer\ObjectDraw</Filter>
+    </ClCompile>
+    <ClCompile Include="CShader.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="dx11helper.cpp">
+      <Filter>Renderer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

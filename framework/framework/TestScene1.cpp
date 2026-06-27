@@ -2,6 +2,7 @@
 
 //	オブジェクト名
 #include"TestObject1.h"
+#include"CubeObject.h"
 
 namespace Framework
 {
@@ -15,7 +16,7 @@ namespace Framework
 
 			void TestScene1::OnInit()
 			{
-				Scene::GetGameObjectManager().AddGameObject<GameObject::GameObjects::TestObject1>("testObject1");
+				Scene::GetGameObjectManager().AddGameObject<GameObject::GameObjects::Primitive::CubeObject>("cubeObject1");
 
 
 			}
@@ -30,11 +31,13 @@ namespace Framework
 			}
 			void TestScene1::OnDraw()
 			{
+				GameObject::GameObject* cube = Scene::GetGameObjectManager().GetGameObject("cubeObject1");
+				
 
 
 			}
 
-		
+
 
 
 		}
