@@ -154,6 +154,7 @@
     <ClInclude Include="GameObjectManager.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="noncopyable.h" />
+    <ClInclude Include="Refer.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
@@ -172,6 +173,7 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="GameObjectManager.cpp" />
+    <ClCompile Include="Refer.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />

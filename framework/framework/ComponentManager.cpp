@@ -78,11 +78,12 @@ namespace Framework
 
 		void ComponentManager::SetComponentDeleteFlag()
 		{
+			m_componentDeleteFlag = true;
 		}
 
 		bool ComponentManager::GetComponentDeleteFlag()
 		{
-
+			return m_componentDeleteFlag;
 		}
 
 	}//	Component

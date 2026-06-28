@@ -45,6 +45,9 @@ namespace Framework
 			OnDraw();
 		}
 
+
+
+
 		/// <summary>
 		/// ゲームオブジェクトマネージャの参照を取得
 		/// </summary>

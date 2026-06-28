@@ -1,4 +1,5 @@
 #include "SceneManager.h"
+#include"Refer.h"
 #include"Scene.h"
 #include"GameObjectManager.h"
 
@@ -66,7 +67,12 @@ namespace Framework
 					m_pMainScene->Uninit();
 				}
 				m_pMainScene = m_sceneMap[m_nextMainSceneName].get();
-				m_pMainScene->Init();
+
+				//	Refer内部のマネージャーを現在のシーンのものに変更
+				Refer::GetInstanse().SetGameObjectManager(m_pMainScene->GetGameObjectManager());
+
+				m_pMainScene->Init();//	シーンのの初期化
+
 
 				m_nextMainSceneName.clear();
 			}
