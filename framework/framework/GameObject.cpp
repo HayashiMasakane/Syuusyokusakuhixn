@@ -1,11 +1,11 @@
 #include "GameObject.h"
 #include "GameObjectManager.h"
 
-
 namespace Framework
 {
 	namespace GameObject
 	{
+
 		/// <summary>
 		/// 派生オブジェクトの初期化を動かす
 		/// </summary>
@@ -21,6 +21,7 @@ namespace Framework
 		{
 			OnUninit();
 		}
+
 
 		/// <summary>
 		/// 自身の削除予約をする

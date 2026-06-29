@@ -1,4 +1,5 @@
 #pragma once
+#include<Windows.h>
 #include<memory>
 #include<vector>
 #include<typeindex>
@@ -33,7 +34,7 @@ namespace Framework
 
 		private:
 			template<typename T>
-			Component* AddComponent();
+			T* AddComponent();
 
 			
 
@@ -61,16 +62,45 @@ namespace Framework
 
 		};
 
+		/// <summary>
+		/// コンポーネントの追加
+		/// ゲームオブジェクトないでする
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <returns></returns>
 		template<typename T>
-		inline Component* ComponentManager::AddComponent()
+		inline T* ComponentManager::AddComponent()
 		{
-			return nullptr;
+			static_assert(std::is_base_of<Component, T>::value,
+				"T must be derived from Component");
+
+
+			// 配列を取得
+			std::type_index typeId(typeid(T));
+			auto& components = m_componentMap[typeId];
+
+			// コンポーネント生成
+			auto component = std::make_unique<T>();
+			T* pComponent = component.get();
+
+			// 配列末尾に追加
+			components.push_back(std::move(component));
+
+			return pComponent;
 		}
 
+		/// <summary>
+		/// コンポーネント配列を取得
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <returns></returns>
 		template<typename T>
 		inline std::vector<T*> ComponentManager::GetComponents()
 		{
-			return std::vector<T*>();
+			std::type_index typeId(typeid(T));
+
+
+			return m_componentMap[typeId];
 		}
 
 	}//	Component

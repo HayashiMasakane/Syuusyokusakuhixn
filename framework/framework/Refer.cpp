@@ -5,7 +5,7 @@
 namespace Framework
 {
 	/// <summary>
-	/// ポインタを削除
+	///	メソッド変数を解放するデストラクタ
 	/// </summary>
 	Refer::~Refer()
 	{

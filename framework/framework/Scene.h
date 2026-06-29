@@ -1,5 +1,6 @@
 #pragma once
 #include"GameObjectManager.h"
+#include"ComponentManager.h"
 
 namespace Framework
 {
@@ -9,6 +10,7 @@ namespace Framework
 		{
 		private:
 			GameObject::GameObjectManager m_gameObjectManager;
+			Component::ComponentManager m_componentManager;
 
 		protected:
 			//	派生オブジェクトの処理用
