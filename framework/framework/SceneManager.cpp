@@ -40,7 +40,6 @@ namespace Framework
 		/// </summary>
 		void SceneManager::Init()
 		{
-
 		}
 
 		/// <summary>
@@ -70,7 +69,7 @@ namespace Framework
 
 				//	Refer内部のマネージャーを現在のシーンのものに変更
 				Refer::GetInstanse().SetGameObjectManager(m_pMainScene->GetGameObjectManager());
-
+				Refer::GetInstanse().SetComponentManager(m_pMainScene->GetComponentManager());
 				m_pMainScene->Init();//	シーンのの初期化
 
 

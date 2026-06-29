@@ -29,6 +29,7 @@ namespace Framework
 			void Draw();
 
 			GameObject::GameObjectManager& GetGameObjectManager();
+			Component::ComponentManager& GetComponentManager();
 
 		};
 

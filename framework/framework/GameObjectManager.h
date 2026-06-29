@@ -10,7 +10,6 @@ namespace Framework
 	namespace GameObject
 	{
 		class GameObject;
-
 		/// <summary>
 		/// コピー禁止オブジェクトマネージャークラス
 		/// 生成削除の責任を持つ
@@ -23,7 +22,7 @@ namespace Framework
 			/// string objectName;
 			/// unique_ptr<Object> オブジェクトのポインタ
 			/// </summary>
-			std::unordered_map<std::string, std::unique_ptr<GameObject>> m_gameObjectMap;
+			std::unordered_map<std::string, std::unique_ptr<Framework::GameObject::GameObject>> m_gameObjectMap;
 
 		public:
 			GameObjectManager() = default;
@@ -41,13 +40,25 @@ namespace Framework
 		};
 
 
+
+
+
+	}//	Object
+}//	Framework
+
+
+#include"GameObject.h"
+namespace Framework
+{
+	namespace GameObject
+	{
 		/// <summary>
-		/// ゲームオブジェクトを追加する
-		/// シーン内で同じ名前があるなら追加せずにnullptrを返す
-		/// </summary>
-		/// <typeparam name="T">派生オブジェクトクラス</typeparam>
-		/// <param name="_gameObjectName">Tにつけたい名前</param>
-		/// <returns>Tのポインタ</returns>
+/// ゲームオブジェクトを追加する
+/// シーン内で同じ名前があるなら追加せずにnullptrを返す
+/// </summary>
+/// <typeparam name="T">派生オブジェクトクラス</typeparam>
+/// <param name="_gameObjectName">Tにつけたい名前</param>
+/// <returns>Tのポインタ</returns>
 		template<typename T>
 		inline GameObject* GameObjectManager::AddGameObject(std::string _gameObjectName)
 		{
@@ -70,10 +81,9 @@ namespace Framework
 			//	オブジェクトの生成し返す
 			m_gameObjectMap[_gameObjectName] = std::make_unique<T>();
 
+			m_gameObjectMap[_gameObjectName].get()->Init();
 			return m_gameObjectMap[_gameObjectName].get();
 
 		}
-
-
-	}//	Object
-}//	Framework
+	}
+}

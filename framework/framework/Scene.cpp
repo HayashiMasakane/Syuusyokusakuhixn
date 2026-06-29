@@ -25,6 +25,7 @@ namespace Framework
 		{
 			OnUninit();
 			m_gameObjectManager.Uninit();
+			m_componentManager.Uninit();
 		}
 
 		/// <summary>
@@ -44,10 +45,6 @@ namespace Framework
 		{
 			OnDraw();
 		}
-
-
-
-
 		/// <summary>
 		/// ゲームオブジェクトマネージャの参照を取得
 		/// </summary>
@@ -55,6 +52,11 @@ namespace Framework
 		GameObject::GameObjectManager& Scene::GetGameObjectManager()
 		{
 			return m_gameObjectManager;
+		}
+
+		Component::ComponentManager& Scene::GetComponentManager()
+		{
+			return m_componentManager;
 		}
 
 

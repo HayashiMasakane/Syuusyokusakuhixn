@@ -74,7 +74,7 @@ namespace Framework
 			static_assert(std::is_base_of<Component, T>::value,
 				"T must be derived from Component");
 
-
+//	todo:ƒGƒ‰[
 			// ”z—ñ‚ğæ“¾
 			std::type_index typeId(typeid(T));
 			auto& components = m_componentMap[typeId];

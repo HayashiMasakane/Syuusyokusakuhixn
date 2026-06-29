@@ -53,6 +53,15 @@
     <Filter Include="Framework\Component">
       <UniqueIdentifier>{556d591d-bc71-4af4-996d-950d7ad3a088}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Framework\Components">
+      <UniqueIdentifier>{1973a31c-8d80-4e07-9b0c-2af81f6db932}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Component\Manager">
+      <UniqueIdentifier>{0de7980b-4a6c-4d2e-b761-ff2493dfe79a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Component\Base">
+      <UniqueIdentifier>{ae5f76cb-6a2c-483e-9a50-498ed5ea68ac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObjectManager.h">
@@ -123,11 +132,12 @@
       <Filter>Framework</Filter>
     </ClInclude>
     <ClInclude Include="Component.h">
-      <Filter>Framework\Component</Filter>
+      <Filter>Framework\Component\Base</Filter>
     </ClInclude>
     <ClInclude Include="ComponentManager.h">
-      <Filter>Framework\Component</Filter>
+      <Filter>Framework\Component\Manager</Filter>
     </ClInclude>
+    <ClInclude Include="TestComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameObjectManager.cpp">
@@ -174,10 +184,11 @@
       <Filter>Framework</Filter>
     </ClCompile>
     <ClCompile Include="Component.cpp">
-      <Filter>Framework\Component</Filter>
+      <Filter>Framework\Component\Base</Filter>
     </ClCompile>
     <ClCompile Include="ComponentManager.cpp">
-      <Filter>Framework\Component</Filter>
+      <Filter>Framework\Component\Manager</Filter>
     </ClCompile>
+    <ClCompile Include="TestComponent.cpp" />
   </ItemGroup>
 </Project>

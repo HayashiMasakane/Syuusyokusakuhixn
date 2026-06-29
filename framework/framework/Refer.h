@@ -33,7 +33,7 @@ namespace Framework
 		Refer() = default;
 		~Refer();
 		Refer(const Refer&) = delete;
-		Refer operator=(const Refer&) = delete;
+		Refer& operator=(const Refer&) = delete;
 
 		//	sceneマネージャで使用
 		void SetComponentManager(Component::ComponentManager& _componentManager);

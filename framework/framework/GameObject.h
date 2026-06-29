@@ -20,6 +20,8 @@ namespace Framework
 		class GameObject
 		{
 		private:
+			
+
 			bool m_deleteFlag = false;
 			std::unordered_map<std::string, Component::Component*> m_componentMap;
 
@@ -48,10 +50,6 @@ namespace Framework
 	
 		};
 
-
-
-
-
 	}//	GameObject
 }//	Framework
 
@@ -59,10 +57,19 @@ namespace Framework
 
 #include"Refer.h"
 #include"ComponentManager.h"
+#include"Component.h"
 namespace Framework
 {
+
 	namespace GameObject
 	{
+		
+		/// <summary>
+		/// コンポーネントの追加
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="_componentName"></param>
+		/// <returns></returns>
 		template<typename T>
 		inline T* GameObject::AddComponent(std::string _componentName)
 		{
@@ -75,14 +82,25 @@ namespace Framework
 
 		}
 
+		/// <summary>
+		/// コンポーネントの取得
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="_componentName"></param>
+		/// <returns></returns>
 		template<typename T>
 		inline T* GameObject::GetComponent(std::string _componentName)
 		{
-			auto it = m_componentMap.find(_componentName);
-			if (it == m_componentMap.end())
+			//	コンポーネント名の物がないならはじく
+			if (!m_componentMap.contains(_componentName))
+			{
 				return nullptr;
+			}
 
-			return dynamic_cast<T*>(it->second);
+			auto* component = m_componentMap[_componentName];
+
+
+			return dynamic_cast<T*>(component);
 		}
 	}
 }

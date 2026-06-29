@@ -2,6 +2,8 @@
 #include"Renderer.h"
 #include"SceneManager.h"
 
+#include"TestScene1.h"
+
 using namespace Framework::Scene;
 
 /// <summary>
@@ -12,6 +14,9 @@ void Game::Init()
 	Renderer::Init();
 
 	Framework::Scene::SceneManager::GetInstanse().Init();
+	Framework::Scene::SceneManager::GetInstanse().AddScene<Framework::Scene::Scenes::TestScene1>("testScene");
+	
+	Framework::Scene::SceneManager::GetInstanse().ChangeScene("testScene");
 }
 
 /// <summary>
