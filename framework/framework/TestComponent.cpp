@@ -13,8 +13,14 @@ namespace Framework
 			}
 			void TestComponent::OnUninit()
 			{
+				m_testcom1 = nullptr;
 				std::cout << "テストコンポーネント終了" << std::endl;
 
+			}
+
+			void TestComponent::SetTestComponent1(TestComponent1* _testcom1)
+			{
+				m_testcom1 = _testcom1;
 			}
 
 			void TestComponent::TestCommentDraw()

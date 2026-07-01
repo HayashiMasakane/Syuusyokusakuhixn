@@ -75,11 +75,11 @@ namespace Framework
 		{
 
 
-			T* component = Refer::GetInstanse().GetComponentManager()->AddComponent<T>();
-			component->Init();
+			T* pComponent = Refer::GetInstanse().GetComponentManager()->AddComponent<T>();
+			pComponent->Init();
 
-			m_componentMap[_componentName] = component;
-			return component;
+			m_componentMap[_componentName] = pComponent;
+			return pComponent;
 
 		}
 

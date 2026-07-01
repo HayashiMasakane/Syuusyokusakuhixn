@@ -1,5 +1,6 @@
 #include "TestObject1.h"
 #include"TestComponent.h"
+#include"TestComponent1.h"
 
 namespace Framework
 {
@@ -9,12 +10,11 @@ namespace Framework
 		{
 			void GameObjects::TestObject1::OnInit()
 			{
-				AddComponent<Component::Components::TestComponent>("tectCom");
-
-				Component::Components::TestComponent* testCom =
-					GetComponent<Component::Components::TestComponent>("testCom");
-
-				testCom->TestCommentDraw();
+				auto* testCom = AddComponent<Component::Components::TestComponent>("tectCom");
+				auto* testCom1 = AddComponent<Component::Components::TestComponent1>("tectCom1");
+				testCom->GetTestComponent1(testCom1);
+			
+			testCom.
 			}
 
 

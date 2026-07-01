@@ -146,6 +146,7 @@
     <ClInclude Include="TestSystem.h">
       <Filter>Framework\System</Filter>
     </ClInclude>
+    <ClInclude Include="TestComponent1.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameObjectManager.cpp">
@@ -203,5 +204,6 @@
     <ClCompile Include="TestSystem.cpp">
       <Filter>Framework\System</Filter>
     </ClCompile>
+    <ClCompile Include="TestComponent1.cpp" />
   </ItemGroup>
 </Project>

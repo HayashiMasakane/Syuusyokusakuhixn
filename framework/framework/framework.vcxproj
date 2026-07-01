@@ -159,6 +159,7 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="TestComponent.h" />
+    <ClInclude Include="TestComponent1.h" />
     <ClInclude Include="TestObject1.h" />
     <ClInclude Include="TestScene1.h" />
     <ClInclude Include="TestSystem.h" />
@@ -180,6 +181,7 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="TestComponent.cpp" />
+    <ClCompile Include="TestComponent1.cpp" />
     <ClCompile Include="TestObject1.cpp" />
     <ClCompile Include="TestScene1.cpp" />
     <ClCompile Include="TestSystem.cpp" />

@@ -8,18 +8,16 @@ namespace Framework
 	{
 		namespace Components
 		{
-			class TestComponent1;
-
-			class TestComponent :public Component
+			/// <summary>
+			/// テストコンポーネントに関連図ける物
+			/// </summary>
+			class TestComponent1 :public Component
 			{
 			private:
-				TestComponent1* m_testcom1 = nullptr;
-
 				void OnInit()override;
 				void OnUninit()override;
 
 			public:
-				void SetTestComponent1(TestComponent1* _testcom1);
 				void TestCommentDraw();
 
 
