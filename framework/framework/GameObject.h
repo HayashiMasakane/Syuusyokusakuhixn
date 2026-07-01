@@ -76,6 +76,7 @@ namespace Framework
 
 
 			T* component = Refer::GetInstanse().GetComponentManager()->AddComponent<T>();
+			component->Init();
 
 			m_componentMap[_componentName] = component;
 			return component;

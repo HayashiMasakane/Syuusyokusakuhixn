@@ -19,6 +19,12 @@ namespace Framework
 		/// </summary>
 		void GameObject::Uninit()
 		{
+			//	コンポーネントの終了予約
+			for (auto& component : m_componentMap)
+			{
+				component.second->SetDeleteFlag();
+			}
+
 			OnUninit();
 		}
 

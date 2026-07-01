@@ -36,7 +36,7 @@ namespace Framework
 			template<typename T>
 			T* AddComponent();
 
-			
+
 
 
 		public:
@@ -57,10 +57,18 @@ namespace Framework
 			template<typename T>
 			std::vector<T*> GetComponents();
 
-			
+
 
 
 		};
+
+	}
+}
+
+namespace Framework
+{
+	namespace Component
+	{
 
 		/// <summary>
 		/// コンポーネントの追加
@@ -74,7 +82,6 @@ namespace Framework
 			static_assert(std::is_base_of<Component, T>::value,
 				"T must be derived from Component");
 
-//	todo:エラー
 			// 配列を取得
 			std::type_index typeId(typeid(T));
 			auto& components = m_componentMap[typeId];
@@ -82,6 +89,7 @@ namespace Framework
 			// コンポーネント生成
 			auto component = std::make_unique<T>();
 			T* pComponent = component.get();
+
 
 			// 配列末尾に追加
 			components.push_back(std::move(component));
