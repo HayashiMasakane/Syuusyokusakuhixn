@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\kaure\OneDrive\ドキュメント\GitHub\Syuusyokusakuhixn\framework\assimp\5.2.5\include;C:\Users\kaure\OneDrive\ドキュメント\GitHub\Syuusyokusakuhixn\framework\directxtk\include</IncludePath>
-    <LibraryPath>C:\Users\kaure\OneDrive\ドキュメント\GitHub\Syuusyokusakuhixn\framework\assimp\5.2.5\bin;C:\Users\kaure\OneDrive\ドキュメント\GitHub\Syuusyokusakuhixn\framework\directxtk\lib\x64\Debug;C:\Users\notem\OneDrive\デスクトップ\Syuusyokusakuhixn\framework\directxtk\lib\x64\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\assimp\5.2.5\include;$(SolutionDir)\directxtk\include</IncludePath>
+    <LibraryPath>$(SolutionDir)\assimp\5.2.5\bin;$(SolutionDir)\directxtk\lib\x64\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>C:\Users\kaure\OneDrive\ドキュメント\GitHub\Syuusyokusakuhixn\framework\assimp\5.2.5\include;C:\Users\kaure\OneDrive\ドキュメント\GitHub\Syuusyokusakuhixn\framework\directxtk\include</IncludePath>

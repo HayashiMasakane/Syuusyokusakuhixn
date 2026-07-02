@@ -8,17 +8,18 @@ namespace Framework
 	{
 		namespace GameObjects
 		{
-			void GameObjects::TestObject1::OnInit()
+			void TestObject1::OnInit()
 			{
 				auto* testCom = AddComponent<Component::Components::TestComponent>("tectCom");
 				auto* testCom1 = AddComponent<Component::Components::TestComponent1>("tectCom1");
-				testCom->GetTestComponent1(testCom1);
+				testCom->SetTestComponent1(testCom1);
 			
-			testCom.
+				testCom->TestCommentDraw();
+				
 			}
 
 
-			void GameObjects::TestObject1::OnUninit()
+			void TestObject1::OnUninit()
 			{
 
 			}

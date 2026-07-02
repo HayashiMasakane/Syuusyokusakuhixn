@@ -19,7 +19,7 @@ namespace Framework
 
 			void TestComponent1::TestCommentDraw()
 			{
-				std::cout << "TestCommentDrawŽÀs" << std::endl;
+				std::cout << "TestCommentDraw1ŽÀs" << std::endl;
 
 			}
 

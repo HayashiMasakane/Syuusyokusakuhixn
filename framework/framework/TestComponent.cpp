@@ -1,5 +1,6 @@
 #include "TestComponent.h"
 #include<iostream>
+#include"TestComponent1.h"
 namespace Framework
 {
 	namespace Component
@@ -26,6 +27,7 @@ namespace Framework
 			void TestComponent::TestCommentDraw()
 			{
 				std::cout << "TestCommentDrawŽÀs" << std::endl;
+				m_testcom1->TestCommentDraw();
 				
 			}
 
