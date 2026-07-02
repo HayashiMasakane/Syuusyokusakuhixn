@@ -17,6 +17,12 @@ namespace Framework
 
 			}
 
+
+			bool TestComponent1::HasMethodPointerComponent()
+			{
+				return true;
+			}
+
 			void TestComponent1::TestCommentDraw()
 			{
 				std::cout << "TestCommentDraw1ŽÀs" << std::endl;

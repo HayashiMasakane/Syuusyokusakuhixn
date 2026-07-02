@@ -1,4 +1,6 @@
 #include "GameObject.h"
+#include<iostream>
+#include<string>
 #include "GameObjectManager.h"
 
 namespace Framework
@@ -12,6 +14,18 @@ namespace Framework
 		void GameObject::Init()
 		{
 			OnInit();
+
+			std::cout << "コンポーネントのエラー確認" << std::endl;
+			//	取得しているコンポーネントに値がちゃんと入っているかを確認
+			for (const auto& component : m_componentMap)
+			{
+				//	ポインタ変数が初期化されていないならエラー分を出す
+				if (!component.second->HasMethodPointerComponent())
+				{
+					std::cout << "エラー" << std::endl;
+				}
+			}
+
 		}
 
 		/// <summary>

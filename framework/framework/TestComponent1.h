@@ -17,6 +17,8 @@ namespace Framework
 				void OnInit()override;
 				void OnUninit()override;
 
+				bool HasMethodPointerComponent() override;
+
 			public:
 				void TestCommentDraw();
 
