@@ -32,8 +32,8 @@ namespace Framework
 			}
 			void TestScene1::OnUpdate()
 			{
-		//		std::vector<TestComponent*>testComs = Scene::GetComponentManager().GetComponents<TestComponent>();
-		//		TestSystem(testComs);
+			//	std::vector<TestComponent*> testComs = Scene::GetComponentManager().GetComponents<TestComponent>();
+			//	TestSystem(testComs);
 			}
 			void TestScene1::OnDraw()
 			{

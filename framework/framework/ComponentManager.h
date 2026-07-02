@@ -24,7 +24,7 @@ namespace Framework
 		class ComponentManager
 		{
 		private:
-			friend GameObject::GameObject;	//	AddComponentƒ’Žg‚¦‚é‚æ‚¤‚É‚·‚é
+			friend GameObject::GameObject;	//	AddComponent‚ðŽg‚¦‚é‚æ‚¤‚É‚·‚é
 
 			using Components = std::vector<std::unique_ptr<Component>>;
 			std::unordered_map<std::type_index, Components> m_componentMap;
@@ -35,7 +35,6 @@ namespace Framework
 		private:
 			template<typename T>
 			T* AddComponent();
-
 
 
 

@@ -19,6 +19,21 @@ namespace Framework
 
 			}
 
+			/// <summary>
+			/// ポインタ変数がヌルではないかを調べる
+			/// </summary>
+			/// <returns>格納しているポインタ変数がnullではないならtrue</returns>
+			bool TestComponent::HasMethodPointerComponent()
+			{
+				if (m_testcom1 == nullptr)
+				{
+					return false;
+				}
+
+
+				return true;
+			}
+
 			void TestComponent::SetTestComponent1(TestComponent1* _testcom1)
 			{
 				m_testcom1 = _testcom1;
@@ -28,7 +43,7 @@ namespace Framework
 			{
 				std::cout << "TestCommentDraw実行" << std::endl;
 				m_testcom1->TestCommentDraw();
-				
+
 			}
 
 

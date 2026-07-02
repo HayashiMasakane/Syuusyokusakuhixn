@@ -8,6 +8,7 @@ namespace Framework
 	{
 		namespace GameObjects
 		{
+
 			void TestObject1::OnInit()
 			{
 				auto* testCom = AddComponent<Component::Components::TestComponent>("tectCom");

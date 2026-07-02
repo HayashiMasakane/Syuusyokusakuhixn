@@ -29,6 +29,10 @@ namespace Framework
 			void SetDeleteFlag();
 			bool GetDeleteFlag();
 
+			//	派生クラスのメソッドポインタ変数にnullがいるなら弾く
+			//	ように派生クラスで書く
+			virtual	bool HasMethodPointerComponent() = 0;
+
 		};
 
 
